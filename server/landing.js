@@ -44,8 +44,8 @@ app.post('/sendMessage', (req, res) => {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-          user: 'chattel6@gmail.com',
-          pass: 'chattel1234'
+          user: '******@gmail.com',
+          pass: '******@'
     }
   });
    //Setting up Email settings
@@ -81,13 +81,13 @@ app.post('/signup', (req, res) => {
 		var transporter = nodemailer.createTransport({
 	    service: 'gmail',
 	    auth: {
-	          user: 'chattel6@gmail.com',
-	          pass: 'chattel1234'
+	          user: '8888888888@gmail.com',
+	          pass: '00000000'
 	    }
 	  });
 	   //Setting up Email settings
 	       var mailOptions = {
-	           from: 'chattel6@gmail.com',
+	           from: '*******@gmail.com',
 	           to : req.body.email,
 	           subject: 'Login credentials for Chatttel',
 	           text : `Hi ${req.body.name}, thanks for signing with us. Your login id is ${req.body.email} and password is ${req,body.password}`,
@@ -146,15 +146,15 @@ app.post('/resetPassword', (req, res) => {
         var transporter = nodemailer.createTransport({
     	    service: 'gmail',
     	    auth: {
-    	          user: 'chattel6@gmail.com',
-    	          pass: 'chattel1234'
+    	          user: '***********@gmail.com',
+    	          pass: '********'
     	    }
     	  });
 
     	   //Setting up Email settings
     	       var mailOptions = {
-    	           from: 'chattel6@gmail.com',
-    	           to : 'chattel6@gmail.com',
+    	           from: '*********@gmail.com',
+    	           to : '********@gmail.com',
     	           subject: 'Login credentials for Chatttel',
     	           text : `localhost:9090/${user_ID}`,
     	       };
