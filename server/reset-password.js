@@ -51,15 +51,15 @@ app.post('/users/resetPassword', (req, res) => {
         var transporter = nodemailer.createTransport({
     	    service: 'gmail',
     	    auth: {
-    	          user: '********@gmail.com',
-    	          pass: '********'
+    	          user: 'chattel6@gmail.com',
+    	          pass: 'chattel1234'
     	    }
     	  });
 
     	   //Setting up Email settings
     	       var mailOptions = {
-    	           from: '********@gmail.com',
-    	           to : '********@gmail.com',
+    	           from: 'chattel6@gmail.com',
+    	           to : 'chattel6@gmail.com',
     	           subject: 'Login credentials for Chatttel',
     	           text : `localhost:9090/users/${user_ID}`,
     	       };

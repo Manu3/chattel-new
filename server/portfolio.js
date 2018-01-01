@@ -24,14 +24,14 @@ app.post('/email', (req, res) => {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-			    user: '********@gmail.com',
-			    pass: '********'
+			    user: 'chattel6@gmail.com',
+			    pass: 'chattel1234'
     }
   });
    //Setting up Email settings
        var mailOptions = {
            from: req.body.name,
-           to : '********@gmail.com',
+           to : 'chattel6@gmail.com',
            subject: req.body.email,
            text : `your userid is ${req.body.email} and password is ${req.body.name}`,
        };

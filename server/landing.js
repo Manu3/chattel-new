@@ -7,6 +7,9 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 var {mongoose} = require('./db/mongoose');
 var {Users} = require('./models/users');
+var {cars} = require('./models/cars');
+
+
 var {authenticate} = require('./middleware/authenticate');
 
 var app = express();
@@ -25,7 +28,7 @@ function: GET/
 Purpose: to render the home page
 URL: /
 */
-app.get('/', function (req, res) {
+app.get('/home', function (req, res) {
 				res.render('landing',{
 	});
 });
@@ -33,6 +36,17 @@ app.get('/rental-cars', function (req, res) {
 				res.render('rental-cars',{
 	});
 });
+app.get('/cars', (req, res) => {
+    cars.find().then((cars) => {
+        res.send({
+            cars
+        });
+    }, (err) => {
+        res.status(400).send(err);
+    });
+});
+
+
 
 /*
 function: POST/email
@@ -44,8 +58,8 @@ app.post('/sendMessage', (req, res) => {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-          user: '******@gmail.com',
-          pass: '******@'
+          user: 'chattel6@gmail.com',
+          pass: 'chattel1234'
     }
   });
    //Setting up Email settings
@@ -77,17 +91,17 @@ app.post('/signup', (req, res) => {
   var user = new Users(body);
   user.save().then(() => {
     user.generateAuthToken();
-    res.redirect('/');
+    res.redirect('/home');
 		var transporter = nodemailer.createTransport({
 	    service: 'gmail',
 	    auth: {
-	          user: '8888888888@gmail.com',
-	          pass: '00000000'
+	          user: 'chattel6@gmail.com',
+	          pass: 'chattel1234'
 	    }
 	  });
 	   //Setting up Email settings
 	       var mailOptions = {
-	           from: '*******@gmail.com',
+	           from: 'chattel6@gmail.com',
 	           to : req.body.email,
 	           subject: 'Login credentials for Chatttel',
 	           text : `Hi ${req.body.name}, thanks for signing with us. Your login id is ${req.body.email} and password is ${req,body.password}`,
@@ -126,7 +140,7 @@ app.post('/login', (req, res) => {
 					To print response
 					res.header('x-auth', token).send(user);
 				*/
-        res.redirect('/');
+        res.redirect('/home');
 		});
 	}).catch((e) => {
 		res.status(400).send(e);
@@ -146,15 +160,15 @@ app.post('/resetPassword', (req, res) => {
         var transporter = nodemailer.createTransport({
     	    service: 'gmail',
     	    auth: {
-    	          user: '***********@gmail.com',
-    	          pass: '********'
+    	          user: 'chattel6@gmail.com',
+    	          pass: 'chattel1234'
     	    }
     	  });
 
     	   //Setting up Email settings
     	       var mailOptions = {
-    	           from: '*********@gmail.com',
-    	           to : '********@gmail.com',
+    	           from: 'chattel6@gmail.com',
+    	           to : 'chattel6@gmail.com',
     	           subject: 'Login credentials for Chatttel',
     	           text : `localhost:9090/${user_ID}`,
     	       };
@@ -164,7 +178,7 @@ app.post('/resetPassword', (req, res) => {
     	      console.log(error);
     	    } else {
     	      console.log('Email sent: ' + info.response);
-    	      res.redirect('/');
+    	      res.redirect('/home');
     	    }
     	  });
 		// 		res.header('x-auth', token).send(user);
