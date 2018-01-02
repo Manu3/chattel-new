@@ -121,6 +121,12 @@ color:#555555;
 	padding: 5px;
 	display: inline-block;
 }
+#map{
+	margin-bottom: 20px;
+	margin-left: 5%;
+	width: 90%;
+	height: 400px;
+}
 
 #calculatorDiv{
 	border-style: solid;
@@ -132,11 +138,9 @@ color:#555555;
 }
 
 
-#box
-{
+#box{
     display: inline-block;
     width: 100px;
-
 }
 	table, th , td  {
 		border-style: solid;
@@ -253,7 +257,7 @@ table tr:nth-child(even) {
 /* Home Style */
 header {
 	/* background: linear-gradient( #f7d29a, #e8f1fd); */
-	background: url('https://dl.dropboxusercontent.com/s/7cbi2huv0pv5qfe/header-bg.jpg?dl=0') no-repeat bottom right;
+	background: url('https://dl.dropboxusercontent.com/s/uxju5yzz9dyujyf/new-bg.jpg?dl=0') no-repeat bottom right;
 	background-size: cover;
 	color: #cfcfcf;
 	position: relative;
@@ -454,6 +458,7 @@ ol.type li a:hover {
 #rental-about-section {
 	padding: 120px 0;
 	background: #f7f7f7;
+	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  /* background: linear-gradient( #f7d29a, #e8f1fd); */
 }
 #rental-about-section p {

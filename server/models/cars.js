@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var cars = mongoose.model('cars', {
-
   name:{
     type:String,
     required:true,
@@ -25,6 +24,6 @@ var cars = mongoose.model('cars', {
     minlength:1,
     trim:true
   }
-});
 
+});
 module.exports = {cars};
