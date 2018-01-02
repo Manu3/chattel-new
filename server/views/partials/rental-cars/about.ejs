@@ -29,7 +29,7 @@
    });
 </script>
 <!-- About Section -->
-<div id="rental-about-section">
+<div id="rental-about-section" ng-app="myApp">
    <div class="container">
       <div class="section-title text-center center">
          <h2>Start your journey</h2>
@@ -44,7 +44,7 @@
                   <li><a data-toggle="tab" href="#sedan">SEDAN</a></li>
                   <li><a data-toggle="tab" href="#suv">SUV</a></li>
                </ul>
-               <div  id="tabs-data" ng-app="myApp"  class="tab-content">
+               <div  id="tabs-data"   class="tab-content">
                   <div id="hatchback" class="tab-pane fade in active">
                      <h3>HATCHBACK</h3>
                      <div ng-controller="hatchbackCtrl">
@@ -95,25 +95,40 @@
             <div id= "calculatorDiv" class="about-text">
                <h4>Tariff Calculator</h4>
                <p>Select a Car</p>
-               <div ng-app="MyApp" ng-controller="listCtrl">
+               <div ng-controller="listCtrl">
                   <select id="selectedCarValue"  ng-model="selectedCar">
                      <option value = "0" label = "Please Select"></option>
-                     <option value = "0" label = "HATCHBACK"></option>
-                     <option value = "0" label = "SEDAN"></option>
-                     <option value = "0" label = "SUV"></option>
-                     <!-- <option ng-repeat="x in myData" value="{{x._id}}">{{x.name}}</option> -->
+                     <option ng-repeat="x in myData" value="{{x._id}}">{{x.name}}</option>
                   </select>
                </div>
                <div id= "slideDiv" class="slidecontainer">
-                 <input type="range" min="1" max="24" value="1" class="slider" id="myRange">
+                  <input type="range" min="1" max="24" value="4" class="slider" id="myRange">
                 <p>Duration: <span id="demo"></span> hours</p>
                </div>
                <div id="longone"></div>
                 <center>
-                <div id="box"><img src="http://placehold.it/100x100"></div>
-                <div id="box"><img src="http://placehold.it/100x100"></div>
-                <div id="box"><img src="http://placehold.it/100x100"></div>
+                <div id="box">
+                    <h5>Hatchback</h5>
+                    <center id="boxText">50 kms free</center>
+                    <center id="boxRate">₹ 700</center>
+                </div>
+                <div id="box">
+                    <h5>Sedan</h5>
+                    <center id="boxText">70 kms free</center>
+                    <center id="boxRate">₹ 1,600</center>
+                </div>
+                <div id="box">
+                    <h5>SUV</h5>
+                    <center id="boxText">100 kms free</center>
+                    <center id="boxRate">₹ 2,900</center>
+                </div>
+                <hr id="hrbox">
+                <h3>FEATURES</h3>
+                <img id="featureImages" src="https://dl.dropboxusercontent.com/s/t55ntd2jurdr1e3/fuel.png?dl=0" alt="" height="48" width="48">
+                <img id="featureImages"src="https://dl.dropboxusercontent.com/s/bjkigjtcp43lcm0/car-insurance.png?dl=0" alt="" height="48" width="48">
+                <img id="featureImages"src="https://dl.dropboxusercontent.com/s/u9q8vfiqrsxleol/invoice.png?dl=0" alt="" height="48" width="48">
                 </center>
+
             </div>
 
          </div>

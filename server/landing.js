@@ -169,7 +169,7 @@ app.post('/resetPassword', (req, res) => {
     	       var mailOptions = {
     	           from: 'chattel6@gmail.com',
     	           to : 'chattel6@gmail.com',
-    	           subject: 'Login credentials for Chatttel',
+    	           subject: 'Reset link for Chatttel login credentials',
     	           text : `localhost:9090/${user_ID}`,
     	       };
 
@@ -185,7 +185,7 @@ app.post('/resetPassword', (req, res) => {
 		// 		//res.header('x-auth', token).send(`tokens are ${user.tokens[1].token}`);
     //
 		// });
-		res.redirect('/');
+		res.redirect('/home');
 	}).catch((e) => {
 		res.status(400).send(e);
 	});
